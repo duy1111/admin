@@ -1,5 +1,5 @@
 import React from "react";
-import { Authenticated, GitHubBanner, Refine } from "@refinedev/core";
+import { Authenticated, Refine } from "@refinedev/core";
 import { RefineKbarProvider } from "@refinedev/kbar";
 import {
     notificationProvider,
@@ -23,14 +23,14 @@ import "dayjs/locale/de";
 import { DashboardPage } from "./pages/dashboard";
 import { AuthPage } from "./pages/auth";
 import { UserList, UserShow } from "./pages/users";
-import { ProductList } from "./pages/products";
 import { CategoryList } from "./pages/categories";
 import { useTranslation } from "react-i18next";
 import { Header, Title, OffLayoutArea } from "./components";
-import { BikeWhiteIcon, PizzaIcon } from "./components/icons";
+import { IncreaseIcon, KeyIcon } from "./components/icons";
 import { ConfigProvider } from "./context";
 
 import "@refinedev/antd/dist/reset.css";
+import { KeywordList } from "./pages/keywords";
 
 const App: React.FC = () => {
     const API_URL = "https://api.finefoods.refine.dev";
@@ -46,7 +46,7 @@ const App: React.FC = () => {
 
     return (
         <BrowserRouter>
-            <GitHubBanner />
+         
             <ConfigProvider>
                 <RefineKbarProvider>
                     <Refine
@@ -77,10 +77,10 @@ const App: React.FC = () => {
                                 },
                             },
                             {
-                                name: "products",
-                                list: "/products",
+                                name: "keyword",
+                                list: "/keyword",
                                 meta: {
-                                    icon: <PizzaIcon />,
+                                    icon: < KeyIcon/>,
                                 },
                             },
                             {
@@ -119,8 +119,8 @@ const App: React.FC = () => {
                                 </Route>
 
                                 <Route
-                                    path="/products"
-                                    element={<ProductList />}
+                                    path="/keyword"
+                                    element={<KeywordList />}
                                 />
                                 <Route
                                     path="/categories"

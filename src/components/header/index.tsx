@@ -260,7 +260,7 @@ export const Header: React.FC = () => {
                                     >
                                         {currentLocale === "en"
                                             ? "English"
-                                            : "German"}
+                                            : "VietName"}
                                         <DownOutlined
                                             style={{
                                                 fontSize: "12px",

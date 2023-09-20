@@ -1,7 +1,7 @@
 {
     "pages": {
         "login": {
-            "title": "Sign in to your account",
+            "title": "Đăng nhập với tài khoản của bạn",
             "signin": "Sign in",
             "signup": "Sign up",
             "divider": "or",

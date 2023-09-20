@@ -4,10 +4,10 @@ import { ConfigProvider, theme, Typography } from "antd";
 import { Column } from "@ant-design/charts";
 import { ColumnConfig } from "@ant-design/plots/lib/components/column";
 
-import { IncreaseIcon, DecreaseIcon } from "../../../components/icons";
+import { IncreaseIcon, DecreaseIcon } from "../../icons";
 
 import { ISalesChart } from "../../../interfaces";
-import { Header, HeaderNumbers, NewCustomersWrapper } from "./styled";
+import { Header, HeaderNumbers, NewContactWrapper } from "./styled";
 
 export const NewCustomers: React.FC = () => {
     const t = useTranslate();
@@ -35,7 +35,7 @@ export const NewCustomers: React.FC = () => {
             },
             color: "rgba(255, 255, 255, 0.5)",
             tooltip: {
-                customContent: (title, data) => {
+                customContent: (title:any, data:any) => {
                     return `<div style="padding: 8px 4px; font-size:16px; font-weight:600">${data[0]?.value}</div>`;
                 },
             },
@@ -61,9 +61,9 @@ export const NewCustomers: React.FC = () => {
                 algorithm: theme.darkAlgorithm,
             }}
         >
-            <NewCustomersWrapper>
+            <NewContactWrapper>
                 <Header>
-                    <Title level={3}>{t("dashboard.newCustomers.title")}</Title>
+                    <Title level={3}>{t("dashboard.newContacts.title")}</Title>
                     <HeaderNumbers>
                         <Text strong>{data?.data.total ?? 0}</Text>
                         <div>
@@ -81,7 +81,7 @@ export const NewCustomers: React.FC = () => {
                     appendPadding={10}
                     {...config}
                 />
-            </NewCustomersWrapper>
+            </NewContactWrapper>
         </ConfigProvider>
     );
 };

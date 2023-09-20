@@ -4,12 +4,12 @@ import { Typography } from "antd";
 import { Column } from "@ant-design/charts";
 import { ColumnConfig } from "@ant-design/plots/lib/components/column";
 
-import { IncreaseIcon, DecreaseIcon } from "../../../components/icons";
+import { IncreaseIcon, DecreaseIcon } from "../../icons";
 
 import { ISalesChart } from "../../../interfaces";
-import { DailyOrderWrapper, TitleAreNumber, TitleArea } from "./styled";
+import {DailyKeywordWrapper, TitleAreNumber, TitleArea } from "./styled";
 
-export const DailyOrders: React.FC = () => {
+export const DailyKeyword: React.FC = () => {
     const t = useTranslate();
     const API_URL = useApiUrl();
 
@@ -35,7 +35,7 @@ export const DailyOrders: React.FC = () => {
             },
             color: "rgba(255, 255, 255, 0.5)",
             tooltip: {
-                customContent: (title, data) => {
+                customContent: (title:any, data:any) => {
                     return `<div style="padding: 8px 4px; font-size:16px; font-weight:600">${data[0]?.value}</div>`;
                 },
             },
@@ -56,9 +56,9 @@ export const DailyOrders: React.FC = () => {
     }, [data]);
 
     return (
-        <DailyOrderWrapper>
+        <DailyKeywordWrapper>
             <TitleArea>
-                <Title level={3}>{t("dashboard.dailyOrders.title")}</Title>
+                <Title level={3}>{t("dashboard.dailyKeyword.title")}</Title>
                 <TitleAreNumber>
                     <Text strong>{data?.data.total ?? 0} </Text>
 
@@ -74,6 +74,6 @@ export const DailyOrders: React.FC = () => {
                 appendPadding={10}
                 {...config}
             />
-        </DailyOrderWrapper>
+        </DailyKeywordWrapper>
     );
 };

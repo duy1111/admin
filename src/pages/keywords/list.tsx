@@ -28,7 +28,7 @@ import {
 import { ICategory, IProduct } from "../../interfaces";
 
 
-export const CategoryList: React.FC<IResourceComponentsProps> = () => {
+export const KeywordList: React.FC<IResourceComponentsProps> = () => {
     const {
         tableProps,
         formProps,
@@ -299,6 +299,7 @@ const CategoryProductsTable: React.FC<{ record: ICategory }> = ({ record }) => {
                     )}
                 />
             </Table>
+
         </List>
     );
 };

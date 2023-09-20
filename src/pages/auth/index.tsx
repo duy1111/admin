@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 const authWrapperProps = {
     style: {
         background:
-            "radial-gradient(50% 50% at 50% 50%,rgba(255, 255, 255, 0) 0%,rgba(0, 0, 0, 0.5) 100%),url('images/login-bg.png')",
-        backgroundSize: "cover",
-    },
+          "radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.5) 100%), url('images/login-bg.png')",
+          backgroundSize: "100% 100%", // Set backgroundSize to "100% 100%"
+      },
 };
 
 const renderAuthContent = (content: React.ReactNode) => {
@@ -17,14 +17,14 @@ const renderAuthContent = (content: React.ReactNode) => {
                 margin: "auto",
             }}
         >
-            <Link to="/">
+            {/* <Link to="/">
                 <img
                     style={{ marginBottom: 26 }}
                     src="/images/fine-foods-login.svg"
                     alt="Logo"
                     width="100%"
                 />
-            </Link>
+            </Link> */}
             {content}
         </div>
     );

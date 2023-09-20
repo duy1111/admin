@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const DailyOrderWrapper = styled.div`
+export const DailyKeywordWrapper = styled.div`
     height: 232px;
     display: flex;
     flex-direction: column;

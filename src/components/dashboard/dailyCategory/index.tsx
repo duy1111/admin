@@ -10,14 +10,14 @@ import { IncreaseIcon, DecreaseIcon } from "../../../components/icons";
 
 import { ISalesChart } from "../../../interfaces";
 import {
-    DailyRevenueWrapper,
+    DailyCategoryWrapper,
     TitleAreNumber,
     TitleArea,
     TitleAreaAmount,
     RangePicker,
 } from "./styled";
 
-export const DailyRevenue: React.FC = () => {
+export const CategoryRevenue: React.FC = () => {
     const t = useTranslate();
     const API_URL = useApiUrl();
 
@@ -54,7 +54,7 @@ export const DailyRevenue: React.FC = () => {
             yField: "value",
             color: "rgba(255, 255, 255, 0.5)",
             tooltip: {
-                customContent: (title, data) => {
+                customContent: (title:any, data:any) => {
                     return `<div style="padding: 8px 4px; font-size:16px; font-weight:600">${data[0]?.value} $</div>`;
                 },
             },
@@ -79,11 +79,11 @@ export const DailyRevenue: React.FC = () => {
     const disabledDate = (date: Dayjs) => date > dayjs();
 
     return (
-        <DailyRevenueWrapper>
+        <DailyCategoryWrapper>
             <TitleArea>
                 <TitleAreaAmount>
                     <Typography.Title level={3}>
-                        {t("dashboard.dailyRevenue.title")}
+                        {t("dashboard.dailyCategory.title")}
                     </Typography.Title>
                     <TitleAreNumber>
                         <NumberField
@@ -146,6 +146,6 @@ export const DailyRevenue: React.FC = () => {
                 style={{ maxHeight: "135px" }}
                 {...config}
             />
-        </DailyRevenueWrapper>
+        </DailyCategoryWrapper>
     );
 };
